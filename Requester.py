@@ -5,6 +5,9 @@ import Connections
 import JSON_Loader
 
 
+# request all magic items
+
+
 def get_magic_items():
     url = "https://api.open5e.com/v1/magicitems/?limit=6000 "
     response = requests.get(url)
@@ -14,6 +17,9 @@ def get_magic_items():
     else:
         print("Failed to fetch magic items:", response.status_code)
         return None
+    
+
+# filter based on rarity, type, and keywords
 
 
 def filter_magic_items(magic_items, rarity=None, item_type=None, keyword=None):
@@ -26,11 +32,13 @@ def filter_magic_items(magic_items, rarity=None, item_type=None, keyword=None):
         filtered_items = [item for item in filtered_items if keyword.lower() in item["desc"].lower()]
     return filtered_items
 
+# Clean it up
 
 def sort_magic_items(magic_items):
     sorted_items = sorted(magic_items, key=lambda x: (x["rarity"], x["name"]))
     return sorted_items
 
+# Provide items
 
 def print_magic_items(magic_items):
     if magic_items:
