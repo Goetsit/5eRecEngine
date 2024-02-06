@@ -18,7 +18,6 @@ def get_magic_items():
 
 def filter_magic_items(magic_items, rarity=None, item_type=None, keyword=None):
     filtered_items = magic_items
-    print("filtered_items Before", filtered_items)
     if rarity:
         filtered_items = [item for item in filtered_items if item["rarity"] == rarity]
     if item_type:
@@ -41,7 +40,7 @@ def print_magic_items(magic_items):
         print("No magic items found.")
 
 
-def main():
+def magic_item_rec():
     magic_items = get_magic_items()
     if magic_items:
         rarity = input("Enter the rarity (common, uncommon, rare, very rare, legendary) or press Enter to skip: ").title()
@@ -58,4 +57,4 @@ def main():
             print_magic_items(sort_magic_items(magic_items))
 
 
-
+magic_item_rec()
