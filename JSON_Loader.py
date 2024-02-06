@@ -1,8 +1,0 @@
-import requests
-import json
-
-
-def jprint(obj):
-
-    text = json.dumps(obj, sort_keys=True, indent=4)
-    return text
