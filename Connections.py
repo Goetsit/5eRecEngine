@@ -22,5 +22,10 @@ class ActionEconomyRecommendationEngineDBConnect:
 
 
 if __name__ == "__main__":
-    greeter = ActionEconomyRecommendationEngineDBConnect("bolt://localhost:7687", "neo4j", "Password")
+    greeter = ActionEconomyRecommendationEngineDBConnect("bolt://localhost:7687", "neo4j", "45%Fc#2ui%6")
     greeter.close()
+
+# uri = "bolt://localhost:7687"
+# user = "neo4j"
+# password = "45%Fc#2ui%6"
+#

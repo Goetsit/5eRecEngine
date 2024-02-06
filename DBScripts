@@ -66,3 +66,62 @@ CREATE (handcrossbow:Weapon:Martial:Ranged {name: 'Crossbow, hand', type: 'Marti
 CREATE (heavycrossbow:Weapon:Martial:Ranged {name: 'Crossbow, heavy', type: 'Martial Weapon', category: 'Equipment'})
 CREATE (longbow:Weapon:Martial:Ranged {name: 'Longbow', type: 'Martial Weapon', category: 'Equipment'})
 CREATE (net:Weapon:Martial:Ranged {name: 'Net', type: 'Martial Weapon', category: 'Equipment'})
+
+--create relationships between classes and weapons
+
+MATCH (c:Class {name: 'Barbarian'})
+MATCH (w:Weapon)
+WHERE w.name IN ['Club', 'Dagger', 'Greatclub', 'Handaxe', 'Javelin', 'Light hammer', 'Mace', 'Quarterstaff', 'Sickle', 'Spear']
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
+
+MATCH (c:Class {name: 'Bard'})
+MATCH (w:Weapon)
+WHERE w.name IN ['Club', 'Dagger', 'Greatclub', 'Handaxe', 'Javelin', 'Light hammer', 'Mace', 'Quarterstaff', 'Sickle', 'Spear', 'Crossbow, light', 'Dart', 'Shortbow', 'Sling']
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
+
+MATCH (c:Class {name: 'Cleric'})
+MATCH (w:Weapon)
+WHERE w.name IN ['Club', 'Dagger', 'Greatclub', 'Handaxe', 'Javelin', 'Light hammer', 'Mace', 'Quarterstaff', 'Sickle', 'Spear']
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
+
+MATCH (c:Class {name: 'Druid'})
+MATCH (w:Weapon)
+WHERE w.name IN ['Club', 'Dagger', 'Greatclub', 'Handaxe', 'Javelin', 'Light hammer', 'Mace', 'Quarterstaff', 'Sickle', 'Spear']
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
+
+MATCH (c:Class {name: 'Fighter'})
+MATCH (w:Weapon)
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
+
+MATCH (c:Class {name: 'Monk'})
+MATCH (w:Weapon)
+WHERE w.name IN ['Club', 'Dagger', 'Greatclub', 'Handaxe', 'Javelin', 'Light hammer', 'Mace', 'Quarterstaff', 'Sickle', 'Spear', 'Shortsword']
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
+
+MATCH (c:Class {name: 'Paladin'})
+MATCH (w:Weapon)
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
+
+MATCH (c:Class {name: 'Ranger'})
+MATCH (w:Weapon)
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
+
+MATCH (c:Class {name: 'Rogue'})
+MATCH (w:Weapon)
+WHERE w.name IN ['Club', 'Dagger', 'Greatclub', 'Handaxe', 'Javelin', 'Light hammer', 'Mace', 'Quarterstaff', 'Sickle', 'Spear', 'Crossbow, light', 'Shortbow', 'Sling']
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
+
+MATCH (c:Class {name: 'Sorcerer'})
+MATCH (w:Weapon)
+WHERE w.name IN ['Dagger', 'Dart', 'Quarterstaff', 'Light crossbow', 'Sling']
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
+
+MATCH (c:Class {name: 'Warlock'})
+MATCH (w:Weapon)
+WHERE w.name IN ['Club', 'Dagger', 'Greatclub', 'Handaxe', 'Javelin', 'Light hammer', 'Mace', 'Quarterstaff', 'Sickle', 'Spear']
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
+
+MATCH (c:Class {name: 'Wizard'})
+MATCH (w:Weapon)
+WHERE w.name IN ['Dagger', 'Dart', 'Quarterstaff', 'Light crossbow', 'Sling']
+CREATE (c)-[:IS_WEAPON_PROFICIENCY]->(w)
