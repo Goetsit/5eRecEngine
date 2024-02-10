@@ -6,7 +6,7 @@ import JSON_Loader
 
 
 param_rarity = input("Rarity? (uncommon, rare, very rare, etc) ").title()
-param_type = input("Type? (Weapon, Wondrous Item, etc) ").title()
+param_type = input("Type? (Weapon, Wondrous Item, Ring) ").title()
 param_class = input("What is your class? ").title()
 param_keywords = input("Keywords: example Dagger, Venom. Separate Multiple words with a comma. " )
 

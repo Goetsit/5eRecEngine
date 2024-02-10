@@ -1,7 +1,7 @@
-import requests
+
 from neo4j import GraphDatabase
 import Connections
-import Requester
+
 
 
 # Function to query Neo4j database for weapons proficient by a class
@@ -80,4 +80,4 @@ driver = GraphDatabase.driver(uri, auth=(user, password))
 
 #     main()
 
-get_proficient_weapons("monk")
+
